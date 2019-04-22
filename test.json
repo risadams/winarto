@@ -1,0 +1,10 @@
+[
+  {
+    "remote": "https://www.visitthedelta.com/(home)",
+    "local": "https://vtd.loopback.website/(home)"
+  },
+  {
+    "remote": "https://www.visitthedelta.com/about",
+    "local": "https://vtd.loopback.website/about"
+  }
+]
