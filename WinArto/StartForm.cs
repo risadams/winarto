@@ -67,8 +67,8 @@ namespace WinArto
                         InitBrowserControl(browser1);
                         InitBrowserControl(browser2);
 
-                        browser1.DocumentCompleted += (bs, be) => TakeScreenshot((WebBrowser) bs, $@"C:\temp\WinArto\remote\{GetPathFileName(be.Url)}.jpg");
-                        browser2.DocumentCompleted += (bs, be) => TakeScreenshot((WebBrowser) bs, $@"C:\temp\WinArto\locals\{GetPathFileName(be.Url)}.jpg");
+                        browser1.DocumentCompleted += (bs, be) => TakeScreenshot((WebBrowser) bs, $@"C:\temp\WinArto\remote\{GetHostFileName(be.Url)}-{GetPathFileName(be.Url)}.jpg");
+                        browser2.DocumentCompleted += (bs, be) => TakeScreenshot((WebBrowser) bs, $@"C:\temp\WinArto\locals\{GetHostFileName(be.Url)}-{GetPathFileName(be.Url)}.jpg");
 
                         await QueueNavigate(browser1, local);
                         await QueueNavigate(browser2, remote);
@@ -105,7 +105,8 @@ namespace WinArto
         /// </summary>
         /// <param name="url">The URL.</param>
         /// <returns>System.String.</returns>
-        private string GetPathFileName(Uri url) => url.LocalPath.TrimStart('/', '\\');
+        private static string GetPathFileName(Uri url) => url.LocalPath.TrimStart('/', '\\');
+        private static string GetHostFileName(Uri url) => url.Host.TrimStart('/', '\\');
 
         /// <summary>
         ///     Initializes the browser control.
