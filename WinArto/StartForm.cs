@@ -58,8 +58,8 @@ namespace WinArto
                 {
                     foreach (var set in testSets)
                     {
-                        var local = new Uri(set.LocalPath);
                         var remote = new Uri(set.RemotePath);
+                        var local = new Uri(set.LocalPath);
 
                         var browser1 = new AwaitableWebBrowser();
                         var browser2 = new AwaitableWebBrowser();
@@ -70,8 +70,8 @@ namespace WinArto
                         browser1.DocumentCompleted += (bs, be) => TakeScreenshot((WebBrowser) bs, $@"C:\temp\WinArto\remote\{GetHostFileName(be.Url)}-{GetPathFileName(be.Url)}.jpg");
                         browser2.DocumentCompleted += (bs, be) => TakeScreenshot((WebBrowser) bs, $@"C:\temp\WinArto\locals\{GetHostFileName(be.Url)}-{GetPathFileName(be.Url)}.jpg");
 
-                        await QueueNavigate(browser1, local);
-                        await QueueNavigate(browser2, remote);
+                        await QueueNavigate(browser1, remote);
+                        await QueueNavigate(browser2, local);
                     }
                 }
 
