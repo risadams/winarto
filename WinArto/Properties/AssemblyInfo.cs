@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("WinArto")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A basic automated regression testing tool to compare screenshot between local and remote websites")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Chris Adams Studios")]
 [assembly: AssemblyProduct("WinArto")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright ©  2019 Ris Adams")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
