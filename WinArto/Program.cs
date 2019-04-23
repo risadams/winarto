@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
@@ -85,7 +84,7 @@ namespace WinArto
                         {
                             var screenshotPath = Path.Combine(ssPath, $"{path}.jpg");
 
-                            ConsoleUtils.WriteLineColor($"Screenshot ready. Saving to {screenshotPath}", ConsoleColor.White);
+                            ConsoleUtils.WriteLineColor($"Screenshot ready. Saving to {screenshotPath}", ConsoleColor.Yellow);
 
                             var bitmap = task.Result;
 
@@ -122,8 +121,6 @@ namespace WinArto
             ConsoleUtils.WriteLineColor("Loading Browser Settings", ConsoleColor.White);
             ConsoleUtils.WriteLineColor($"\t{settings.UserAgent}", ConsoleColor.Gray);
             ConsoleUtils.WriteLineColor("Loading Configuration", ConsoleColor.White);
-
-            Thread.Sleep(1000); //wait for init to complete;
 
             _browser = new ChromiumWebBrowser();
 
