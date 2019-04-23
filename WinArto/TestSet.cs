@@ -7,18 +7,25 @@ namespace WinArto
     /// </summary>
     public class TestSet
     {
-        /// <summary>
-        ///     Gets or sets the local path.
-        /// </summary>
-        /// <value>The local path.</value>
-        [JsonProperty("local")]
-        public string LocalPath { get; set; }
+        [JsonProperty("breaks")]
+        public BreakPoint[] BreakPoints { get; set; }
 
-        /// <summary>
-        ///     Gets or sets the remote path.
-        /// </summary>
-        /// <value>The remote path.</value>
+        [JsonProperty("local")]
+        public string LocalDomain { get; set; }
+
+        [JsonProperty("paths")]
+        public string[] Paths { get; set; }
+
         [JsonProperty("remote")]
-        public string RemotePath { get; set; }
+        public string RemoteDomain { get; set; }
+    }
+
+    public class BreakPoint
+    {
+        [JsonProperty("width")]
+        public int Width { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
     }
 }
